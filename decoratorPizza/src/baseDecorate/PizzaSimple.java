@@ -1,6 +1,6 @@
 package baseDecorate;
 
-import interfaces.IComponentPizza;
+import interfacesdecorator.IComponentPizza;
 
 public class PizzaSimple implements IComponentPizza{
     @Override
