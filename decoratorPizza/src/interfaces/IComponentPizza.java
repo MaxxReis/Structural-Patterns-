@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface IPizza {
+public interface IComponentPizza {
     public void doPizza();
 }
