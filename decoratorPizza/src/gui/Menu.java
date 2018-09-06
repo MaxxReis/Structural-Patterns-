@@ -5,6 +5,13 @@
  */
 package gui;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import plugin.Plugin;
 /**
  *
@@ -18,11 +25,17 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        showPlugins();
+        //showPlugins();
+        
     }
 
-    public void showPlugins(){
-        this.plugins.getLoadedPlugin();
+    public String showPlugins(){
+        String names = "";
+        ArrayList<String> pluginNames = this.plugins.getLoadedPlugin();
+        for (int i = 0; i < pluginNames.size(); i++) {
+            names += pluginNames.get(i);
+        }
+        return names;
     }
     
     /**
@@ -50,14 +63,17 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         itensAvailable.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {showPlugins()};
+            //String[] strings = {  };
+
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i];}
+
         });
         jScrollPane1.setViewportView(itensAvailable);
 
         itensSelected.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {  };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

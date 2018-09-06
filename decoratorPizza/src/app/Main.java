@@ -4,6 +4,7 @@ import baseDecorate.PizzaSimple;
 
 import interfacesdecorator.IComponentPizza;
 import java.util.ArrayList;
+import plugin.Plugin;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,5 +24,7 @@ public class Main {
             pizza.doPizza();
             System.out.print("\n");
         }
+        Plugin plugin = new Plugin();
+        System.out.println(plugin.getLoadedPlugin());
     }
 }
