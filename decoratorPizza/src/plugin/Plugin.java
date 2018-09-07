@@ -19,31 +19,6 @@ public class Plugin implements IPlugin{
     }
     
     public ArrayList<String> getLoadedPlugin(){
-        /*File currentDir = new File("./plugins");
-        File[] archives = currentDir.listFiles();
-        String[] names = currentDir.list();
-        int i = 0;
-        URL[] jars = new URL[names.length];
-        for (File file : archives) {
-            System.out.println(file + " - " + names[i].split("\\.")[0]);
-            try {
-                jars[i] = (new File("./plugins/" + names[i])).toURI().toURL();
-            } catch (Exception ex) {
-                Logger.getLogger(Plugin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        
-        URLClassLoader ulc = new URLClassLoader(jars);
-        for(i = 0; i < names.length; i++){
-            String decoratorName = names[i].split("\\.")[0];
-            try {
-                IPlugin plugin = (IPlugin) Class.forName(decoratorName.toLowerCase() + "." + decoratorName, true, ulc).newInstance();
-                plugin.initialize();
-            } catch (Exception ex) {
-                Logger.getLogger(Plugin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }*/
         
         String pluginNames = null;
         

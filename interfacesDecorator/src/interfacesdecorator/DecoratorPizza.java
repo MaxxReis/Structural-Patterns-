@@ -4,11 +4,9 @@ public abstract class DecoratorPizza implements IComponentPizza{
     protected IComponentPizza pizzaDecorator;
 
     @Override
-    public void doPizza() {
-        pizzaDecorator.doPizza();
-    }
+    public abstract void doPizza();    
     
-    public DecoratorPizza(IComponentPizza pizzaDecorator){
+    protected DecoratorPizza(IComponentPizza pizzaDecorator){
         this.pizzaDecorator = pizzaDecorator;
     }
 }

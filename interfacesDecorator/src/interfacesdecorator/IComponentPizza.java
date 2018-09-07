@@ -1,5 +1,5 @@
 package interfacesdecorator;
 
 public interface IComponentPizza {
-    public void doPizza();
+    public abstract void doPizza();
 }

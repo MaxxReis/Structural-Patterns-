@@ -29,13 +29,12 @@ public class Menu extends javax.swing.JFrame {
         
     }
 
-    public String showPlugins(){
-        String names = "";
-        ArrayList<String> pluginNames = this.plugins.getLoadedPlugin();
+    public String[] showPlugins(){
+        String[] pluginNames = new String[this.plugins.getLoadedPlugin().size()];
         for (int i = 0; i < pluginNames.size(); i++) {
-            names += pluginNames.get(i);
+            pluginNames[i] = this.plugins.getLoadedPlugin().get(i);
         }
-        return names;
+        return pluginNames;
     }
     
     /**
@@ -63,9 +62,7 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         itensAvailable.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = {showPlugins()};
-            //String[] strings = {  };
-
+            String[] strings = showPlugins();
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i];}
 
