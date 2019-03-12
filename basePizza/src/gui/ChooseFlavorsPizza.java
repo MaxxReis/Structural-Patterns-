@@ -232,7 +232,7 @@ public class ChooseFlavorsPizza extends javax.swing.JFrame {
         }
 
         lastElement.doPizza();
-        JOptionPane.showMessageDialog(null, "Sucess!");
+        JOptionPane.showMessageDialog(null, "Success!");
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     /**

@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 public class PluginController {
     private final ArrayList<String> pluginsList = new ArrayList<>();
+    private URLClassLoader ulc;
     
     public ArrayList<String> getLoadedPlugins(){
         File currentDir = new File("./plugins");
@@ -26,7 +27,7 @@ public class PluginController {
             }
         }
          
-        URLClassLoader ulc = new URLClassLoader(jars);
+        ulc = new URLClassLoader(jars);
         for (i = 0; i < plugins.length; i++) {
             String factoryName = plugins[i].split("\\.")[0];
             pluginsList.add(factoryName);
@@ -34,4 +35,8 @@ public class PluginController {
         
         return pluginsList;
     }
+    
+//    public URLClassLoader getUrlClassLoader(){
+//        
+//    }
 }
