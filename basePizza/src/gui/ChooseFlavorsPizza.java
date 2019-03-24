@@ -177,16 +177,18 @@ public class ChooseFlavorsPizza extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        dlm.removeElement(jSelectedIngredients.getSelectedValue());
-        selected.remove(jSelectedIngredients.getSelectedIndex());
+        if(!jSelectedIngredients.isSelectionEmpty()){
+            dlm.removeElement(jSelectedIngredients.getSelectedValue());
+            selected.remove(jSelectedIngredients.getSelectedValue());
+        }
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpActionPerformed
         String selectedItem = jSelectedIngredients.getSelectedValue();
         int itemIndex = jSelectedIngredients.getSelectedIndex();
-        DefaultListModel model = (DefaultListModel)jSelectedIngredients.getModel();
         
         if(itemIndex > 0){
+            DefaultListModel model = (DefaultListModel)jSelectedIngredients.getModel();
             model.remove(itemIndex);
             model.add(itemIndex - 1, selectedItem);
             jSelectedIngredients.setSelectedIndex(itemIndex - 1);
@@ -196,9 +198,9 @@ public class ChooseFlavorsPizza extends javax.swing.JFrame {
     private void btnDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDownActionPerformed
         String selectedItem = jSelectedIngredients.getSelectedValue();
         int itemIndex = jSelectedIngredients.getSelectedIndex();
-        DefaultListModel model = (DefaultListModel)jSelectedIngredients.getModel();
         
         if(itemIndex < selected.size() - 1){
+            DefaultListModel model = (DefaultListModel)jSelectedIngredients.getModel();
             model.remove(itemIndex);
             model.add(itemIndex + 1, selectedItem);
             jSelectedIngredients.setSelectedIndex(itemIndex + 1);
@@ -230,7 +232,7 @@ public class ChooseFlavorsPizza extends javax.swing.JFrame {
         }
 
         lastElement.doPizza();
-        JOptionPane.showMessageDialog(null, "Sucess!");
+        JOptionPane.showMessageDialog(null, "Success!");
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     /**
