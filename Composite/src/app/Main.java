@@ -9,11 +9,11 @@ public class Main {
         Composite c1 = new Composite("Composite 1");
         Composite c2 = new Composite("Composite 2");
         
-        Caju caju1 = new Caju("Caju", "Verde", "Pequeno");
-        Caju caju2 = new Caju("Caju", "Verde", "Grande");
-        Caju caju3 = new Caju("Caju", "Verde", "Pequeno");
-        Manga manga1 = new Manga("Manga01", "De vêz", "Pequena");
-        Manga manga2 = new Manga("Manga02", "Madura", "Grande");
+        Fruta caju1 = new Fruta("Caju", "Verde", "Pequeno");
+        Fruta caju2 = new Fruta("Caju", "Verde", "Grande");
+        Fruta caju3 = new Fruta("Caju", "Verde", "Pequeno");
+        Fruta manga1 = new Fruta("Manga01", "De vêz", "Pequena");
+        Fruta manga2 = new Fruta("Manga02", "Madura", "Grande");
         
         c1.add(caju1);
         c1.add(caju2);
@@ -23,8 +23,10 @@ public class Main {
         c2.add(manga2);
         c2.add(caju2);
         c2.add(c1);
+        c2.add(caju3);
         
-//        c2.realizarLimpeza();
+        c2.realizarLimpeza();
+        System.out.println("Limpeza de uma fruta");
         c2.limparUmaFruta("Caju", "Verde", "Pequeno");
     }
 }

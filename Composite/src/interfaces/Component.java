@@ -23,7 +23,7 @@ public abstract class Component {
     }
     public Component getChild(String nome_fruta){
         for (Component component : children) {
-            if(component.nome == nome_fruta)
+            if(component.equals(nome_fruta))
                 return component;
         }
         return null;
